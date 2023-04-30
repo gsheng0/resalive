@@ -40,7 +40,7 @@ var clickRequestChangeSides = false;
 
 function startBirdDefense () {
     init();
-    // setInterval(frame, 30);
+    setInterval(frame, 30);
 }
 export default startBirdDefense;
 
@@ -61,13 +61,13 @@ function init(){
     setUpHandlers();
 
     Bat.setMap(map);
-    // MassiveBat.setMap(map);
-    // Chicken.setMap(map);
-    // Crow.setMap(map);
-    // MassiveChicken.setMap(map);
-    // Woodpecker.setMap(map);
-    // BatFactory.setMap(map);
-    // MassiveBatFactory.setMap(map);
+    MassiveBat.setMap(map);
+    Chicken.setMap(map);
+    Crow.setMap(map);
+    MassiveChicken.setMap(map);
+    Woodpecker.setMap(map);
+    BatFactory.setMap(map);
+    MassiveBatFactory.setMap(map);
 }
 
 

@@ -7,15 +7,15 @@ var demoSpaceCreated = false;
 function creatDemoSpace(event, subject) {
     event.preventDefault();
     var renderingLocation =  document.getElementById("demo");
-    if (demoSpaceCreated) {
-        ReactDom.render(null, renderingLocation);
+    if (demoSpaceCreated) {        
+        ReactDom.render(<div></div>, renderingLocation);
         demoSpaceCreated = false;
     }
     else {
         ReactDom.render(
             <div>
                 <h1>{subject} Demo</h1>
-                <canvas id="demoCanvas" width="1400" height="500"></canvas>
+                <canvas id="demoCanvas" width="1400" height="800"></canvas>
             </div>,
             renderingLocation
         );
@@ -29,7 +29,7 @@ const projects = [
         name: "Maze Solver",
         description: "Create a maze and then solve it with a bunch of bouncing balls.",
         category: "Java Appliet",
-        imgSrc: "maze-solver.png",
+        imgSrc: "images/maze-solver.png",
         appStarter: function runMazeSolver(event) { creatDemoSpace(event, "Maze Solver"); }
     },
     {
@@ -37,7 +37,7 @@ const projects = [
         name: "Regression Calculator",
         description: "Plot some points and watch the calculator find an equation of best fit.",
         category: "Website",
-        imgSrc: "regression-calculator-icon.jpg",
+        imgSrc: "images/regression-calculator-icon.jpg",
         appStarter: function runRegressCalculator(event) { creatDemoSpace(event, "Regression Calculator"); }
     },
     {
@@ -45,7 +45,7 @@ const projects = [
         name: "Bird Defense",
         description: "Tower defense game written with vanilla Javascript with multiplayer mode.",
         category: "Website",
-        imgSrc: "bird-defense-icon.jpg",
+        imgSrc: "images/bird-defense-icon.jpg",
         appStarter: function runBirdDefense(event) {creatDemoSpace(event, "Bird Defense"); startBirdDefense(); }
     },
     {
@@ -53,7 +53,7 @@ const projects = [
         name: "Email Formatter",
         description: "Create email templates and write emails with a powerful formatting language.",
         category: "Website",
-        imgSrc: "email-formatter-icon.png",
+        imgSrc: "images/email-formatter-icon.png",
         appStarter: function runEmailFormatter(event) { creatDemoSpace(event, "Email Formatter");  }
     },
     {
@@ -61,7 +61,7 @@ const projects = [
         name: "Knowledge Base",
         description: "Personal knowledge repository. Record and search through your prior knowledge.",
         category: "Website",
-        imgSrc: "knowledge-base-icon.jpg",
+        imgSrc: "images/knowledge-base-icon.jpg",
         appStarter: function runKnowledgeBase(event) { creatDemoSpace(event, "Knowledge Base");  }
     },
     {
@@ -69,7 +69,7 @@ const projects = [
         name: "Minesweeper",
         description: "The classic minesweeper game.",
         category: "Java Applet",
-        imgSrc: "minesweeper-icon.jpg",
+        imgSrc: "images/minesweeper-icon.jpg",
         appStarter: function runMinesweeper(event) { event.preventDefault(); }
     }
 ];

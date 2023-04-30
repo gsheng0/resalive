@@ -28,36 +28,37 @@ export class Util {
         myImage = new Image(100, 100);
         myImage.src = "egg.png";
         let finalImage = myImage;*/
+        let imagePath = "images/birdDefense/";
         let chicken = new Image();
-        chicken.src = "chicken.png";
+        chicken.src = imagePath + "chicken.png";
 
         let bat = new Image();
         bat.loading = "eager"
-        bat.src = "bat.png";
+        bat.src = imagePath + "bat.png";
 
         let crow = new Image();
         crow.loading = "eager";
-        crow.src = "crow.png";
+        crow.src = imagePath + "crow.png";
 
         let egg = new Image();
         egg.loading = "eager";
-        egg.src = "egg.png";
+        egg.src = imagePath + "egg.png";
 
         let nest = new Image();
         nest.loading = "eager";
-        nest.src = "nest.png";
+        nest.src = imagePath + "nest.png";
 
         let rock = new Image();
         rock.loading = "eager";
-        rock.src = "rock.png";
+        rock.src = imagePath + "rock.png";
 
         let woodpecker = new Image();
         woodpecker.loading = "eager";
-        woodpecker.src = "woodpecker.png";
+        woodpecker.src = imagePath + "woodpecker.png";
 
         let title = new Image();
         title.loading = "eager";
-        title.src = "bird_defense.png";
+        title.src = imagePath + "bird_defense.png";
 
 
         Util.IMAGES.CHICKEN = chicken;

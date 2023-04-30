@@ -1,4 +1,27 @@
 import React from "react";
+import ReactDom from "react-dom";
+import startBirdDefense  from "../projects/birdDefense/birdDefense";
+
+var demoSpaceCreated = false;
+
+function creatDemoSpace(event, subject) {
+    event.preventDefault();
+    var renderingLocation =  document.getElementById("demo");
+    if (demoSpaceCreated) {
+        ReactDom.render(null, renderingLocation);
+        demoSpaceCreated = false;
+    }
+    else {
+        ReactDom.render(
+            <div>
+                <h1>{subject} Demo</h1>
+                <canvas id="demoCanvas" width="1400" height="500"></canvas>
+            </div>,
+            renderingLocation
+        );
+        demoSpaceCreated = true;
+    }
+}
 
 const projects = [
     {
@@ -7,7 +30,7 @@ const projects = [
         description: "Create a maze and then solve it with a bunch of bouncing balls.",
         category: "Java Appliet",
         imgSrc: "maze-solver.png",
-        appStarter: function MazeSolver(event) { event.preventDefault(); }
+        appStarter: function runMazeSolver(event) { creatDemoSpace(event, "Maze Solver"); }
     },
     {
         id: "RegressionCalculator",
@@ -15,7 +38,7 @@ const projects = [
         description: "Plot some points and watch the calculator find an equation of best fit.",
         category: "Website",
         imgSrc: "regression-calculator-icon.jpg",
-        appStarter: function regressCalculator(event) { event.preventDefault(); }
+        appStarter: function runRegressCalculator(event) { creatDemoSpace(event, "Regression Calculator"); }
     },
     {
         id: "BirdDefense",
@@ -23,7 +46,7 @@ const projects = [
         description: "Tower defense game written with vanilla Javascript with multiplayer mode.",
         category: "Website",
         imgSrc: "bird-defense-icon.jpg",
-        appStarter: function BirdDefense(event) { event.preventDefault(); }
+        appStarter: function runBirdDefense(event) {creatDemoSpace(event, "Bird Defense"); startBirdDefense(); }
     },
     {
         id: "EmailFormatter",
@@ -31,7 +54,7 @@ const projects = [
         description: "Create email templates and write emails with a powerful formatting language.",
         category: "Website",
         imgSrc: "email-formatter-icon.png",
-        appStarter: function EmailFormatter(event) { event.preventDefault(); }
+        appStarter: function runEmailFormatter(event) { creatDemoSpace(event, "Email Formatter");  }
     },
     {
         id: "KnowledgeBase",
@@ -39,7 +62,7 @@ const projects = [
         description: "Personal knowledge repository. Record and search through your prior knowledge.",
         category: "Website",
         imgSrc: "knowledge-base-icon.jpg",
-        appStarter: function KnowledgeBase(event) { event.preventDefault(); }
+        appStarter: function runKnowledgeBase(event) { creatDemoSpace(event, "Knowledge Base");  }
     },
     {
         id: "Minesweeper",
@@ -47,7 +70,7 @@ const projects = [
         description: "The classic minesweeper game.",
         category: "Java Applet",
         imgSrc: "minesweeper-icon.jpg",
-        appStarter: function Minesweeper(event) { event.preventDefault(); }
+        appStarter: function runMinesweeper(event) { event.preventDefault(); }
     }
 ];
 
@@ -88,8 +111,6 @@ function CreateProject(proj) {
 }
 
 function Works() {
-    projects.map(proj=>console.log(proj.id));
-
     // data-animate-el doesn't work in <h2 />, <li />
     return (
         <div class="row works-portfolio">

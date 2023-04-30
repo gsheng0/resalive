@@ -38,9 +38,15 @@ var isRequesting = false;
 var clickChangeSides = false;
 var clickRequestChangeSides = false;
 
+function startBirdDefense () {
+    init();
+    // setInterval(frame, 30);
+}
+export default startBirdDefense;
+
 function init(){
 
-    canvas = document.getElementById("myCanvas");
+    canvas = document.getElementById("demoCanvas");
     ctx = canvas.getContext("2d");
     map = new Map();
     nest = new Nest(map, new Vector(350, 250));
@@ -55,13 +61,13 @@ function init(){
     setUpHandlers();
 
     Bat.setMap(map);
-    MassiveBat.setMap(map);
-    Chicken.setMap(map);
-    Crow.setMap(map);
-    MassiveChicken.setMap(map);
-    Woodpecker.setMap(map);
-    BatFactory.setMap(map);
-    MassiveBatFactory.setMap(map);
+    // MassiveBat.setMap(map);
+    // Chicken.setMap(map);
+    // Crow.setMap(map);
+    // MassiveChicken.setMap(map);
+    // Woodpecker.setMap(map);
+    // BatFactory.setMap(map);
+    // MassiveBatFactory.setMap(map);
 }
 
 
@@ -163,10 +169,10 @@ function reset(){
     nest.alive = true;
     counter = 0;
 }
-window.onload = () => {
-    init();
-    setInterval(frame, 30);
-}
+// window.onload = () => {
+//     init();
+//     setInterval(frame, 30);
+// }
 
 function setUpHandlers(){
     document.addEventListener("pointermove", (e) =>{
